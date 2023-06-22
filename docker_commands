@@ -1,0 +1,60 @@
+docker run nginx(image_name) --> To get an imange and run a container in attach mode(foreground) from image
+
+docker run -d image_name --> To get an imange and run a container in detach mode(background) from image
+
+docker attach container_name/id --> To attach to the container running in background. for ID first 5 chars are enough. ctrl+C kill the process
+
+docker ps --> to view running container details
+
+docker ps -a --> To view all container details
+
+docker stop/start container_name --> to stop/start a container
+
+docker rm container_name --> to remove a container
+
+docker images --> To view available docker images on host
+
+docker rmi image_name --> to remove an image
+
+docker pull image_name --> to pull image alone
+
+docker run image_name sleep 5 ---> To run a process with sleep 5 sec
+
+docker exec container_name cat /etc/nginx/nginx.conf ---> To run a command inside a container
+
+
+docker exec -it  "CONTAINER_Id" bash --> To log in to container (i --> intractive mode, t --> attach to the terminal)
+
+docker run -it centos bash --> to login to the container directly
+
+docker run -d --name container_name image_name --> To run a container with the specified name
+
+docker run -p 80:80 -d nginx --> To map a container port to host(VM) port
+
+docker run -v /home/pugal/nginx:/etc/nginx1 -d nginx --> To mount a containe directory with host(VM) directory
+
+docker inspect container_name/id ----> To get container details in json format
+
+docker logs container_name/id ---> To check logs
+
+docker run image_name:tag_name ---> to run a container with specific version of image (like os version)
+
+docker run ubuntu:17.10 cat /etc/*release* --> to pass command while creating container
+
+docker run -u root image_name --> To run with specific user
+
+docker system prune ---> To clean up any resources — images, containers, volumes, and networks — that are dangling (not tagged or associated with a container)
+
+docker system prune -a ---> To remove any stopped containers and all unused images (not just dangling images)
+
+--------------------------------
+
+---> docker file is an instruction and arugument format
+
+docker build . -f Dockerfile -t pugalvsr/my-doc-image ---> To create image form docker file
+
+docker login ---> To login docker hub repo
+
+docker history pugalvsr/my-doc-image ---> To check image build information
+
+docker push pugalvsr/my-doc-image ---> To push image into docker hub
