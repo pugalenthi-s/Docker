@@ -101,3 +101,5 @@ docker image tag image_name localhost:5000/image_name ---> To tag image_name
 docker push localhost:5000/image_name --> To push the image to the private registry
 
 docker pull localhost:5000/image_name --> To pull the image from the private registry. we can use IP instead of localhost
+
+curl -X GET localhost:5000/v2/_catalog --> To check the list of images pushed
