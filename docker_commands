@@ -47,6 +47,8 @@ docker system prune ---> To clean up any resources — images, containers, volum
 
 docker system prune -a ---> To remove any stopped containers and all unused images (not just dangling images)
 
+docker run -d --restart always image_name --> To start container automatically
+
 ==========================================================
 
 Docker Image:
