@@ -47,7 +47,8 @@ docker system prune ---> To clean up any resources — images, containers, volum
 
 docker system prune -a ---> To remove any stopped containers and all unused images (not just dangling images)
 
---------------------------------
+==========================================================
+
 Docker Image:
 +++++++++++++++
 ---> docker file is an instruction and arugument format
@@ -60,8 +61,28 @@ docker history pugalvsr/my-doc-image ---> To check image build information
 
 docker push pugalvsr/my-doc-image ---> To push image into docker hub
 
-----------------------------------------
+==========================================================
 
 Docker Compose:
+++++++++++++++
 
 docker run -d --name=frontend --link backend(container name):DB(host name on application) frontend_image --> it will create a host entry for backend container in frontend container
+
+Installation:
+++++++++++++++
+
+sudo curl -L https://github.com/docker/compose/releases/download/1.25.3/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+
+++++++++++++++++
+
+---> Need to create a configuration file YAML(.yml) format which is called docker-compose.yml.
+
+---> Need to specify Version detail on the top of the configuration file and Need to add required service details.
+
+docker-compose up ---> To start services specified in docker-compose.yml
+
+docker-compose -f docker-compose.yml up -d  ---> To specify file name and start in back-ground
