@@ -22,7 +22,6 @@ docker run image_name sleep 5 ---> To run a process with sleep 5 sec
 
 docker exec container_name cat /etc/nginx/nginx.conf ---> To run a command inside a container
 
-
 docker exec -it  "CONTAINER_Id" bash --> To log in to container (i --> intractive mode, t --> attach to the terminal)
 
 docker run -it centos bash --> to login to the container directly
@@ -48,6 +47,8 @@ docker system prune ---> To clean up any resources — images, containers, volum
 docker system prune -a ---> To remove any stopped containers and all unused images (not just dangling images)
 
 docker run -d --restart always image_name --> To start container automatically
+
+docker image prune -a --> to remove unused images
 
 ==========================================================
 
