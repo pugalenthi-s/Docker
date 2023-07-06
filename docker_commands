@@ -145,16 +145,21 @@ docker run \
 Docker Networks:
 ++++++++++++++++
 
-docker run ubuntu ---> to bridge network (default network. all containers attached to this network with one internal IP - 172.17* series)
+docker run ubuntu ---> to run container in bridge network (default network. all containers attached to this network with one internal IP - 172.17* series)
 
-docker run --network=none ubuntu ---> to none network (Not connected to any network)
+docker run --network=none ubuntu ---> to run container in none network (Not connected to any network)
 
-docker run --network=host ubuntu ---> to host network(without port mapping we can access serivce in containers. in this, we cant use same port twice)
+docker run --network=host ubuntu ---> to run container in host network(without port mapping we can access service in containers. in this, we cant use same port twice)
 
-docker network create \
-  --driver bridge \
-  --subnet 182.18.0.0/16
-  cNetwork_Name  ---> To create a new docker bridge network.
+-
+
+docker network create --driver bridge --subnet 182.18.0.1/24 --gateway 182.18.0.1 Network_Name ---> To create a new docker bridge network.
+
+docker network ls --> To list docker networks
+
+docker network inspect Network_Name --> To inspect the network
+
+docker run -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 --network=wp-mysql-network --> To run cantainer in specific network
   
 
 ---> Docker has in-build DNS server running on 127.0.0.11  
