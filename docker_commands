@@ -52,6 +52,8 @@ docker image prune -a --> to remove unused images
 
 docker run --cpus=.5 --memory=100m image_name --> To limit the cpu and mem usage for container
 
+docker run --rm image_name --> to automatically remove the container once it exits.
+
 ==========================================================
 
 Docker Image:
