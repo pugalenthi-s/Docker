@@ -139,3 +139,22 @@ docker run -v /opt/mysql:/var/lib/mysql mysql --> To mount a folder host to cont
 (OR)
 docker run \
 --mount type=bind,source=/opt/mysql,target=/var/lib/mysql mysql  --> To mount a folder host to container
+
+======================================================================
+
+Docker Networks:
+++++++++++++++++
+
+docker run ubuntu ---> to bridge network (default network. all containers attached to this network with one internal IP - 172.17* series)
+
+docker run --network=none ubuntu ---> to none network (Not connected to any network)
+
+docker run --network=host ubuntu ---> to host network(without port mapping we can access serivce in containers. in this, we cant use same port twice)
+
+docker network create \
+  --driver bridge \
+  --subnet 182.18.0.0/16
+  cNetwork_Name  ---> To create a new docker bridge network.
+  
+
+---> Docker has in-build DNS server running on 127.0.0.11  
