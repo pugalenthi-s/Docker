@@ -50,6 +50,8 @@ docker run -d --restart always image_name --> To start container automatically
 
 docker image prune -a --> to remove unused images
 
+docker run --cpus=.5 --memory=100m image_name --> To limit the cpu and mem usage for container
+
 ==========================================================
 
 Docker Image:
@@ -104,3 +106,14 @@ docker push localhost:5000/image_name --> To push the image to the private regis
 docker pull localhost:5000/image_name --> To pull the image from the private registry. we can use IP instead of localhost
 
 curl -X GET localhost:5000/v2/_catalog --> To check the list of images pushed
+
+======================================================================
+
+namespace:
++++++++++++
+In Docker, a namespace is a feature of the Linux kernel that provides process isolation. Namespaces allow different processes to have their own isolated view of system resources such as process IDs, network interfaces, mount points, and more.
+
+Cgroup:
+++++++++
+
+In Docker, cgroups (short for control groups) are a feature of the Linux kernel that allow you to limit and manage resource usage for processes and groups of processes. Docker uses cgroups to control and allocate resources to containers, ensuring that they operate within defined limits.
