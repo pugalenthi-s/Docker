@@ -54,6 +54,12 @@ docker run --cpus=.5 --memory=100m image_name --> To limit the cpu and mem usage
 
 docker run --rm image_name --> to automatically remove the container once it exits.
 
+docker info --> To list the info about installed docker
+
+docker system df --> To check actual disk usage of docker
+
+docker system df -v ---> To check actual disk usage of docker with image, container and volume details
+
 ==========================================================
 
 Docker Image:
