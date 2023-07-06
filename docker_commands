@@ -119,3 +119,17 @@ Cgroup:
 ++++++++
 
 In Docker, cgroups (short for control groups) are a feature of the Linux kernel that allow you to limit and manage resource usage for processes and groups of processes. Docker uses cgroups to control and allocate resources to containers, ensuring that they operate within defined limits.
+
+=============================
+
+Docker storages:
++++++++++++++++++
+
+docker volume create volume_name --> to create volume in docker(/var/lib/docker/volume)
+
+docker run -v volume_name:/var/lib/mysql mysql --> To mount a volume to container -- volume mount
+
+docker run -v /opt/mysql:/var/lib/mysql mysql --> To mount a folder host to container -- bind mount
+(OR)
+docker run \
+--mount type=bind,source=/opt/mysql,target=/var/lib/mysql mysql  --> To mount a folder host to container
