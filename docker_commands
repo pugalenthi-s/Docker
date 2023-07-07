@@ -163,3 +163,14 @@ docker run -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 --network=wp-mys
   
 
 ---> Docker has in-build DNS server running on 127.0.0.11  
+
+================================================================================
+
+Docker Swarm:
++++++++++++++++
+
+docker swarm init --advertise-addr 192.168.1.12 --> To init swarn run this in manager node
+
+docker swarm join --token <token> manager --> To enable swarm worker node, copy swarm join command with token from output of swarm init command and run that in worker node.
+
+docker service create --replicas=100 image_name --> to run service across the cluster
