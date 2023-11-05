@@ -1,0 +1,23 @@
+FROM centos:centos7
+
+COPY jboss-eap-7.1 /opt/jboss-eap-7.1
+
+COPY java-11 /opt/java-11
+
+COPY Wars/*.war /opt/jboss-eap-7.1/standalone/deployments/
+
+RUN sed -i 's\127.0.0.1\0.0.0.0\g' /opt/jboss-eap-7.1/standalone/configuration/standalone.xml
+
+USER root
+
+RUN useradd jboss
+
+RUN chown jboss:jboss -R /opt/java-11 /opt/jboss-eap-7.1/
+
+RUN alternatives --install /usr/bin/java java /opt/java-11/bin/java 2
+
+USER jboss
+
+EXPOSE 8080
+
+CMD ["/opt/jboss-eap-7.1/bin/standalone.sh"]
