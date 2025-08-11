@@ -60,6 +60,8 @@ docker system df --> To check actual disk usage of docker
 
 docker system df -v ---> To check actual disk usage of docker with image, container and volume details
 
+docker ports container_id --> to list the mapping ports
+
 ==========================================================
 
 Docker Image:
