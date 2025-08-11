@@ -78,6 +78,9 @@ docker history pugalvsr/my-doc-image ---> To check image build information
 
 docker push pugalvsr/my-doc-image ---> To push image into docker hub
 
+docker commit container_name/id image_name --> to build a image from container
+
+docker tag source_image[:tag] target_image[:tag]
 ==========================================================
 
 Docker Compose:
