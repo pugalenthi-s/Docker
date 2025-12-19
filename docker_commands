@@ -181,3 +181,13 @@ docker swarm init --advertise-addr 192.168.1.12 --> To init swarn run this in ma
 docker swarm join --token <token> manager --> To enable swarm worker node, copy swarm join command with token from output of swarm init command and run that in worker node.
 
 docker service create --replicas=100 image_name --> to run service across the cluster
+
+=================================================================================
+
+docker run --user=1008 ubuntu sleep 300 --> To run container with different user than root.
+
+docker run --cap-add MAC_ADMIN ubuntu --> To add linux capabilities
+
+docker run --cap-drop KILL ubuntu --> To drop the linux capabilities
+
+docker run --privileges ubuntu --> to run with full privileges
